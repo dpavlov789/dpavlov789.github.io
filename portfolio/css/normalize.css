@@ -1,0 +1,73 @@
+html {
+    box-sizing: border-box;
+}
+
+html,
+body{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button{
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+img,
+picture,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+@media (favors-reduced-motion: reduce) {
+
+    *,
+    * ::before,
+    * ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
