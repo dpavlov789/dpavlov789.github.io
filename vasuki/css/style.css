@@ -1,4 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap'); */
+
+@font-face {
+    font-family: 'Golos Text';
+    font-weight: 400;
+    src: url("../fonts/Golos_Text/GolosText-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    font-weight: 500;
+    src: url("../fonts/Golos_Text/GolosText-Medium.ttf");
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    font-weight: 600;
+    src: url("../fonts/Golos_Text/GolosText-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    font-weight: 700;
+    src: url("../fonts/Golos_Text/GolosText-Bold.ttf");
+}
+
+@font-face {
+    font-family: Merriweather;
+    font-weight: 400;
+    src: url("../fonts/Merriweather/Merriweather-Regular.ttf");
+}
+
+@font-face {
+    font-family: Merriweather Bold;
+    font-weight: 700;
+    src: url("../fonts/Merriweather/Merriweather-Bold.ttf");
+}
 
 :root{
     --dark: #313131;
@@ -123,10 +159,16 @@ body{
     display: inline-block;
     padding-left: 100%;
     white-space: nowrap;
-    animation: ticker-scroll 75s linear infinite;
+    animation: ticker-scroll 120s linear infinite;
 }
 
 .ticker-item {
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 22px;
+}
+
+.ticker-item1 {
     display: inline-block;
     padding-right: 10px;
     font-size: 22px;
@@ -525,6 +567,10 @@ body{
     z-index: 10;
 }
 
+.current-slide{
+    font-weight: 600;
+}
+
 @media screen and (max-width: 1200px) {
 
     .btn{
@@ -767,7 +813,7 @@ body{
     }
 
     .steps{
-        margin-bottom: 120px;
+        margin-bottom: 172px;
     }
 
     .step7 img{
@@ -844,6 +890,7 @@ body{
     .sh__left,
     .sh__right{
         width: 100%;
+        font-size: 20px;
     }
 
     .shedule__item{

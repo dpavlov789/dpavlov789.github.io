@@ -79,8 +79,7 @@ const newsItems = [
 function createTickerContent() {
   const container = document.getElementById('tickerContent');
   
-  // Создаем несколько копий контента для плавности
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 10; i++) {
       newsItems.forEach(news => {
           const span = document.createElement('span');
           span.className = 'ticker-item';
