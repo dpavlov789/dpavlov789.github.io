@@ -3,6 +3,7 @@
 :root{
     --background-color: #0E0E0E;
     --font-color: #DAC5A7;
+    --border: 1px solid #35312c;
 }
 
 body {
@@ -127,4 +128,42 @@ section{
     background-color: #181716;
     border: 1px solid #35312c;
     border-radius: 2px;
+}
+
+.area3__items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.area3__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.area3__item img{
+    border-radius: 16px;
+    border: var(--border);
+    margin-bottom: 16px;
+}
+
+.area4__text{
+    width: 680px;
+    line-height: 1.2;
+    margin-bottom: 32px;
+}
+
+.area4__list ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.area4__list ul img{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
 }
