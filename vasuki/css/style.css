@@ -42,7 +42,7 @@ body{
     font-family: "Merriweather", serif;
     width: 100%;
     max-width: 542px;
-    font-size: 60px;
+    font-size: clamp(2.25rem, 0.75rem + 4.898vw, 3.75rem);
     font-weight: 400;
     text-transform: uppercase;
     line-height: 110%;
@@ -104,6 +104,53 @@ body{
     color: #fff;
 }
 
+.news-ticker {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    background: var(--red);
+    color: white;
+    padding: 15px 0;
+    position: relative;
+    font-family: "Merriweather", serif;
+    text-transform: uppercase;
+    margin-bottom: 106px;
+    line-height: 1.4;
+    
+}
+
+.ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: ticker-scroll 75s linear infinite;
+}
+
+.ticker-item {
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 22px;
+}
+
+.ticker-item::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 10px 4px 0;
+}
+
+@keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.news-ticker:hover .ticker-content {
+    animation-play-state: paused;
+}
+
 .marquee {
     display: flex;
     align-items: center;
@@ -143,7 +190,7 @@ body{
     font-family: "Merriweather", serif;
     width: 100%;
     max-width: 710px;
-    font-size: 36px;
+    font-size: clamp(1.625rem, -0.2891rem + 3.125vw, 2.25rem);
     font-weight: 400;
     text-transform: uppercase;
     line-height: 135%;
@@ -218,6 +265,8 @@ body{
     width: 50%;
     font-weight: 400;
     margin: 16px 0;
+    font-size: clamp(0.6875rem, -1.0352rem + 2.8125vw, 1.25rem);
+    line-height: 1;
 }
 
 .sh__right{
@@ -225,6 +274,8 @@ body{
     width: 50%;
     font-weight: 600;
     margin: 16px;
+    font-size: clamp(0.6875rem, -1.0352rem + 2.8125vw, 1.25rem);
+    line-height: 1;
 }
 
 .sh__divider{
@@ -239,6 +290,7 @@ body{
 .shedule__sub{
     line-height: 120%;
     color: #3057A2;
+    font-size: clamp(0.75rem, -0.7813rem + 2.5vw, 1.25rem);
 }
 
 .steps{
@@ -336,9 +388,14 @@ body{
 }
 
 .step7 img{
+    width: clamp(15.625rem, -34.2882rem + 69.4444vw, 25rem);
     position: absolute;
     right: -60px;
     top: -100px;
+}
+
+.plane__mob{
+    display: none;
 }
 
 .st__num{
@@ -373,11 +430,14 @@ body{
     align-items: center;
     gap: 28px;
     margin: 60px 0 140px;
+    text-align: center;
 }
 
 .m__ava{
-    width: 320px;
-    height: 320px;
+    width: clamp(15rem, -7.2727rem + 36.3636vw, 20rem);
+    height: clamp(15rem, -7.2727rem + 36.3636vw, 20rem);
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .m__name{
@@ -465,11 +525,162 @@ body{
     z-index: 10;
 }
 
-@media screen and (max-width:490px){
+@media screen and (max-width: 1200px) {
+
+    .btn{
+        width: 190px;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+
+    .slick-track{
+        gap: 10px;
+    }
+
+    .step7 img{
+        display: none;
+    }
+    
+    .section__title{
+        line-height: 1.1;
+    }
+
+    .btn__wrap{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn{
+        width: 310px;
+        padding: 12px;
+    }
+
+    .step1,
+    .step2,
+    .step3,
+    .step4,
+    .step5,
+    .step6,
+    .step7{
+        height: auto;
+        border-radius: 16px;
+    }
 
     /*Steps slider*/
     .slider__steps-container {
         position: relative;
+    }
+
+    .slider__steps{
+        display: flex;
+        gap: 1rem;
+        min-width: 0;
+        position: relative;
+    }
+
+    .slider__steps .slick-arrow{
+        position: absolute;
+        bottom: -60px;
+        z-index: 10;
+        font-size: 0;
+        border: none;
+        outline: none;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .slider__steps .slick-arrow.slick-prev{
+        left: 25%;
+        background-image: url(../img/sl1_left.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .slider__steps .slick-arrow.slick-next{
+        left: 75%;
+        background-image: url(../img/sl1_right.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .slider__steps .slick-dots{
+        position: absolute;
+        font-size: 0;
+        left: 50%;
+        bottom: -60px;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .slider__steps .slick-dots button{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        padding: 0;
+        border: none;
+        outline: none;
+        background-color: #d9d9d9;
+    }
+
+    .slider__steps .slick-dots li.slick-active button{
+        background-color: #313131;
+    }
+
+    .slider-counter{
+        top: auto;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 50px;
+    }
+
+    .slider .slick-arrow.slick-prev{
+        left: 35%;
+    }
+
+    .slider .slick-arrow.slick-next{
+        left: 65%;
+    }
+
+    .slider .slick-arrow{
+        top: auto;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width: 670px){
+    .m__ava{
+        width: 320px;
+        height: 320px;
+    }
+}
+
+@media screen and (max-width: 490px){
+
+    .st__text{
+        margin-top: 20px;
+    }
+
+    .st__num{
+        margin-top: 20px;
+    }
+
+    /*Steps slider*/
+    .slider__steps-container {
+        position: relative;
+        margin-top: 120px;
     }
 
     .slider__steps{
@@ -560,7 +771,15 @@ body{
     }
 
     .step7 img{
-        right: 0;
+        display: none;
+    }
+
+    .plane__mob{
+        width: 320px;
+        display: block;
+        position: absolute;
+        bottom: 220px;
+        z-index: 1;
     }
 
     .shedule{
@@ -661,16 +880,6 @@ body{
     .steps__title-flex{
         flex-direction: column;
         align-items: start;
-    }
-
-    .step1,
-    .step2,
-    .step3,
-    .step4,
-    .step5,
-    .step6,
-    .step7{
-        height: auto;
     }
 
     .steps__grid-wrap{

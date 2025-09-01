@@ -149,8 +149,27 @@ section{
     margin-bottom: 16px;
 }
 
+.area4{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.area4__left{
+    width: 60%;
+    flex-shrink: 0;
+}
+
+.area4__right{
+    width: 40%;
+}
+
+.area4__right img{
+    border-radius: 16px;
+}
+
 .area4__text{
-    width: 680px;
     line-height: 1.2;
     margin-bottom: 32px;
 }
@@ -158,12 +177,49 @@ section{
 .area4__list ul{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
     margin-bottom: 10px;
+}
+
+.area4__list ul:last-child{
+    margin-bottom: 0;
 }
 
 .area4__list ul img{
     width: 24px;
     height: 24px;
     border-radius: 50%;
+}
+
+.area4__img{
+    background-image: url(img/about1.png);
+    height: 500px;
+}
+
+.area5__form{
+    width: 100%;
+    max-width: 500px;
+}
+
+.form__item{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.area5__form input{
+    height: 40px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.area5__form textarea{
+    height: 140px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
 }

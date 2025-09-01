@@ -4,6 +4,18 @@ $(document).ready(function (){
         slidesToScroll: 1,
         responsive: [
             {
+              breakpoint: 900,
+              settings: {
+                slidesToShow: 2,
+              }
+            },
+            {
+              breakpoint: 670,
+              settings: {
+                slidesToShow: 1,
+              }
+            },
+            {
               breakpoint: 490,
               settings: {
                 slidesToShow: 1,
@@ -26,6 +38,13 @@ $(document).ready(function (){
     $('.slider__steps').slick({
         responsive: [
             {
+              breakpoint: 980,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            },
+            {
               breakpoint: 490,
               settings: {
                 slidesToShow: 1,
@@ -35,7 +54,6 @@ $(document).ready(function (){
           ],
         infinite: true,
         autoplay: false,
-        autoplaySpeed: 300,
         dots: true,
     });
 });
@@ -43,7 +61,7 @@ $(document).ready(function (){
 function removeClassOnDesktop() {
   const element = document.querySelector('.steps__grid-wrap');
   
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 980) {
     element.classList.remove('slider__steps');
   } else {
     element.classList.add('slider__steps');
@@ -51,4 +69,26 @@ function removeClassOnDesktop() {
 }
 document.addEventListener('DOMContentLoaded', removeClassOnDesktop);
 window.addEventListener('resize', removeClassOnDesktop);
+
+const newsItems = [
+  "Дело помощи утопающим — дело рук самих утопающих!",
+  "Шахматы двигают вперёд не только культуру, но и экономику!",
+  "Лед тронулся, господа присяжные заседатели!"
+];
+
+function createTickerContent() {
+  const container = document.getElementById('tickerContent');
+  
+  // Создаем несколько копий контента для плавности
+  for (let i = 0; i < 4; i++) {
+      newsItems.forEach(news => {
+          const span = document.createElement('span');
+          span.className = 'ticker-item';
+          span.textContent = news;
+          container.appendChild(span);
+      });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', createTickerContent);
 
