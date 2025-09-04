@@ -9,7 +9,7 @@
 
 body {
     height: 100vh;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Geologica', sans-serif;
     font-size: 16px;
     line-height: 180%;
     font-weight: 400;
@@ -169,10 +169,6 @@ section{
     flex-shrink: 0;
 }
 
-.area4__right{
-    
-}
-
 .area4__right img{
     border-radius: 16px;
 }
@@ -182,18 +178,18 @@ section{
     margin-bottom: 32px;
 }
 
-.area4__list ul{
+.area4__list li{
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 10px;
 }
 
-.area4__list ul:last-child{
+.area4__list li:last-child{
     margin-bottom: 0;
 }
 
-.area4__list ul img{
+.area4__list li img{
     width: 24px;
     height: 24px;
     border-radius: 50%;
