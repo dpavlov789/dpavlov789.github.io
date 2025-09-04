@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
                     <li><a href="#">Услуги</a></li>
                     <li><a href="#">Работы</a></li>
                     <li><a href="#">О себе</a></li>
-                    <li><a class="menu__list-btn" href="#">Обратная связь</a></li>
+                    <li><a class="btn" href="#">Обратная связь</a></li>
                 </ul>
             </nav>
         </div>
@@ -106,7 +106,7 @@
                     </li>
                 </div>
             </div>
-            <div class="area4__rigt">
+            <div class="area4__right">
                 <img src="img/about1.png" alt="">
             </div>
         </section>
@@ -122,12 +122,16 @@
                     <label for="message">Сообщение</label>
                     <textarea name="message" id="message" required></textarea>
                 </div>
+                <button type="submit" class="btn">Отправить</button>
             </form>
         </section>
 
     </main>
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+        <div>© <span id="current-year"></span> Все права защищены</div>
+    </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
