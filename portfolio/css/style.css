@@ -11,8 +11,8 @@ body {
     height: 100vh;
     font-family: 'Geologica', sans-serif;
     font-size: 16px;
-    line-height: 180%;
-    font-weight: 400;
+    line-height: 150%;
+    font-weight: 200;
     color: var(--font-color);
     background-color: var(--background-color);
 }
@@ -23,6 +23,7 @@ h1{
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 32px;
+    text-align: center;
 }
 
 h3{
@@ -113,16 +114,26 @@ section{
 }
 
 .area1__btn-arrow{
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #4f2c21;
     border-radius: 50%;
+    transition: all .3s;
+    background-color: transparent;
+    fill: var(--font-color);
 }
 
-.area2{
+.area1__btn-arrow:hover{
+    background-color: var(--font-color);
+    border: 1px solid var(--background-color);
+    fill: var(--background-color);
+}
+
+.area2__items{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -157,47 +168,39 @@ section{
     margin-bottom: 16px;
 }
 
-.area4{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.area4__left{
-    width: 49%;
-    flex-shrink: 0;
-}
-
-.area4__right img{
-    border-radius: 16px;
-}
-
 .area4__text{
     line-height: 1.2;
-    margin-bottom: 32px;
+    margin: 0 auto 32px;
+    max-width: 550px;
+    text-align: center;
 }
 
-.area4__list li{
+.area4__items{
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     gap: 1rem;
-    margin-bottom: 10px;
+    margin-top: 40px;
 }
 
-.area4__list li:last-child{
-    margin-bottom: 0;
+.area4__item{
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
-.area4__list li img{
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+.area4__item-icon{
+    width: 90px;
+    height: 90px;
+    fill: var(--font-color);
 }
 
-.area4__img{
-    background-image: url(img/about1.png);
-    height: 500px;
+.area4__item-text{
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
 }
 
 .area5__form{
@@ -210,6 +213,12 @@ section{
     flex-direction: column;
     gap: 8px;
     margin-bottom: 16px;
+}
+
+.area5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .area5__form input{
