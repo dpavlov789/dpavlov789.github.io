@@ -1,0 +1,32 @@
+//- doctype html
+//- html(lang= 'ru')
+//-   head
+//-     meta(charset='utf-8')
+//-     title= 'Science'
+//-   body
+//-     p Файл откомпилирован шаблонизатором Pug
+//-     .logo-svg
+//-       img.logo(src=require('./images/logo.svg'), alt='Загрузка SVG изображений с помощью Webpack')
+
+//-     include:markdown-it ../content/article.md
+
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Science
+img(src=require('./images/avatar.png') width='100' height='100' alt='')
+header.header
+  .container
+    .header__wrap
+      a(href='#')
+        img(src='./images/logo.svg' alt='Logo')
+      nav
+        ul
+          li Point 1
+          li &Pcy;&ucy;&ncy;&kcy;&tcy; 2
+          li &Pcy;&ucy;&ncy;&kcy;&tcy; 3
+          li &Pcy;&ucy;&ncy;&kcy;&tcy; 4
+      a.header__phone(href='') +7 999 999 99 99
+main.main
+footer.footer

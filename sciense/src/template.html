@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__wrap">
+        <a href="#" class="header__logo"><img src="./images/logo.svg" alt="Logo"></a>
+        <nav>
+          <ul class="menu__list">
+            <li><a href="">Пункт 1</a></li>
+            <li><a href="">Пункт 2</a></li>
+            <li><a href="">Пункт 3</a></li>
+            <li><a href="">Пункт 4</a></li>
+          </ul>
+        </nav>
+        <a href="" class="header__phone">+7 999 999 99 99</a>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="container">
+      <div class="slider">
+        <div class="slider__container">
+          <div class="slider">
+              <div class="slide active">
+                <img class="slider__img" src="./images/slide1.jpg" alt="">
+                <div>Slide 1</div>
+              </div>
+              <div class="slide">
+                <img class="slider__img" src="./images/slide1.jpg" alt="">
+                <div>Slide 2</div>
+              </div>
+              <div class="slide">
+                <img class="slider__img" src="./images/slide1.jpg" alt="">
+                <div>Slide 3</div>
+              </div>
+          </div>
+          <button class="slider__arrow-btn1 slider__prev">
+            <svg class="slider__arrow1" width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.940023 9.06001C0.659122 8.77876 0.501343 8.39751 0.501343 8.00001C0.501343 7.60251 0.659122 7.22126 0.940023 6.94001L6.59602 1.28201C6.87742 1.00075 7.25902 0.842787 7.65688 0.84288C7.85388 0.842927 8.04894 0.881774 8.23092 0.957206C8.41291 1.03264 8.57826 1.14317 8.71752 1.28251C8.85679 1.42184 8.96725 1.58724 9.04259 1.76926C9.11794 1.95128 9.1567 2.14636 9.15665 2.34336C9.1566 2.54036 9.11775 2.73542 9.04232 2.91741C8.96689 3.09939 8.85636 3.26474 8.71702 3.40401L4.12202 8.00001L8.71802 12.596C8.86135 12.7343 8.9757 12.8998 9.0544 13.0827C9.1331 13.2657 9.17457 13.4625 9.17639 13.6617C9.17822 13.8609 9.14036 14.0584 9.06502 14.2428C8.98969 14.4272 8.87839 14.5947 8.73762 14.7356C8.59685 14.8765 8.42942 14.9879 8.24511 15.0635C8.0608 15.139 7.8633 15.177 7.66413 15.1754C7.46497 15.1737 7.26812 15.1325 7.08507 15.0539C6.90203 14.9754 6.73646 14.8612 6.59802 14.718L0.938023 9.06001H0.940023Z"/>
+            </svg>
+          </button>
+          <button class="slider__arrow-btn2 slider__next">
+            <svg class="slider__arrow2" width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.05998 6.94001C9.34088 7.22126 9.49866 7.60251 9.49866 8.00001C9.49866 8.39751 9.34088 8.77876 9.05998 9.06001L3.40398 14.718C3.12258 14.9993 2.74098 15.1572 2.34312 15.1571C2.14612 15.1571 1.95106 15.1182 1.76908 15.0428C1.58709 14.9674 1.42174 14.8568 1.28248 14.7175C1.14321 14.5782 1.03275 14.4128 0.957405 14.2308C0.882059 14.0487 0.843303 13.8537 0.843349 13.6567C0.843396 13.4597 0.882245 13.2646 0.957676 13.0826C1.03311 12.9006 1.14364 12.7353 1.28298 12.596L5.87798 8.00001L1.28198 3.40401C1.13865 3.2657 1.0243 3.10024 0.945598 2.91727C0.866899 2.73431 0.82543 2.5375 0.823605 2.33833C0.821781 2.13916 0.859641 1.94162 0.934975 1.75724C1.01031 1.57287 1.12161 1.40534 1.26238 1.26443C1.40315 1.12353 1.57058 1.01207 1.75489 0.93656C1.93919 0.861052 2.13669 0.823006 2.33586 0.824643C2.53503 0.826279 2.73188 0.867564 2.91492 0.946089C3.09797 1.02461 3.26354 1.13881 3.40198 1.28201L9.06198 6.94001L9.05998 6.94001Z"/>
+            </svg>
+          </button>
+          <div class="slider__dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="search__wrap">
+        <div class="search__title">Блок с поиском</div>
+        <img src="./images/star.svg" alt="">
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="info__wrap">
+        <div class="calendar">
+          <div class="cal__seldate">12.12.1990</div>
+          <div class="calendar-container">
+            <div class="calendar-header">
+              <button class="nav-btn prev-month">←</button>
+              <h2 class="calendar-title"></h2>
+              <button class="nav-btn next-month">→</button>
+            </div>
+            <div class="calendar-weekdays">
+              <div>Пн</div>
+              <div>Вт</div>
+              <div>Ср</div>
+              <div>Чт</div>
+              <div>Пт</div>
+              <div>Сб</div>
+              <div>Вс</div>
+            </div>              
+            <div class="calendar-days"></div>
+          </div>
+        </div>
+        <div class="news">
+          <div class="news__wrap">
+            <div class="news__item">111</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"></footer>
+</body>
+</html>

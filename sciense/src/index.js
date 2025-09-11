@@ -1,0 +1,10 @@
+import './styles/reset.css';
+import './styles/main.scss';
+import './styles/_variables.scss';
+import './styles/_mixins.scss';
+import './styles/_fonts.scss';
+import './styles/_slider.scss';
+import './styles/_calendar.scss';
+import './scripts/main.js';
+import './scripts/slider.js';
+import './scripts/calendar.js';
