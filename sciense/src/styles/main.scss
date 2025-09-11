@@ -2,7 +2,7 @@ $font-size: 16px;
 $font-color: #6C6F75;
 $blue-color: #2F5DD3;
 $bg-color: #F3F4F7;
-$darak-color: #242A38;
+$dark-color: #242A38;
 
 @mixin flex-bt{
   display: flex;
@@ -11,11 +11,18 @@ $darak-color: #242A38;
   gap: 1rem;
 }
 
+@mixin flex-cn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 html{
   font-size: $font-size;
   color: $font-color;
   font-family: 'Open Sans';
-  line-height: 100%;
+  line-height: 1.4;
 }
 
 body{
@@ -24,6 +31,13 @@ body{
 
 section{
   margin-bottom: 48px!important;
+}
+
+h1{
+  color: var(--dark-color);
+  font-size: 32px;
+  font-style: italic;
+  margin-bottom: 24px;
 }
 
 .container{
@@ -46,7 +60,6 @@ section{
 .header__logo {
     width: 160px;
     height: 48px;
-    border: 1px solid #ddd;
 }
 
 .menu__list{
@@ -65,13 +78,98 @@ section{
 .search__wrap{
   @include flex-bt;
   padding: 48px;
-  background-color: $darak-color;
+  background-color: $dark-color;
+  color: #fff;
+}
+
+.search__title{
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 70px;
+  color: #fff;
+}
+
+.search__stars{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.search__stars img{
+  width: 27px;
+  height: 27px;
+}
+
+.search__left,
+.search__right{
+  width: 50%;
+}
+
+.search__right{
+  background-color: #fff;
+  padding: 24px;
+}
+
+.search__input{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.search__input-icon{
+  width: 30px;
+  height: 30px;
+}
+
+.search__input input{
+  width: 100%;
+  height: 32px;
+  border: none;
+  outline: none;
+}
+
+.btn__blue{
+  @include flex-cn;
+  position: relative;
+  width: fit-content;
+  padding: 13px 24px;
+  background-color: $blue-color;
+  color: #fff;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.btn__blue:hover{
+  background-color: #4976e8;
+}
+
+.btn__light{
+  @include flex-cn;
+  width: fit-content;
+  padding: 13px 24px;
+  background-color: #fff;
+  color: var(--blue-color);
+  cursor: pointer;
+  transition: all .3s;
+  outline: 1px solid var(--blue-color);
+  outline-offset: -1px;
+  transition: all .3s;
+}
+
+.btn__light:hover{
+  background-color: var(--blue-color);
+  color: #fff;
+}
+
+.btn__blue.search{
+  width: 100%;
 }
 
 .info__wrap{
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
-  padding: 16px;
   gap: 1rem;
 }

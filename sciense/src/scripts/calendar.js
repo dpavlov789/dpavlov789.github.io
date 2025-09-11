@@ -1,229 +1,155 @@
 class Calendar {
-    constructor(containerSelector) {
-        this.container = document.querySelector(containerSelector);
+    constructor() {
         this.currentDate = new Date();
-        this.selectedDate = new Date();
-        this.events = new Map();
-        
+        this.selectedDate = null;
         this.init();
     }
-    
+
     init() {
-        this.render();
-        this.bindEvents();
-        this.loadEvents();
+        this.renderCalendar();
+        this.addEventListeners();
     }
-    
-    render() {
-        const title = this.container.querySelector('.calendar-title');
-        const daysContainer = this.container.querySelector('.calendar-days');
+
+    renderCalendar() {
+        const monthYearElement = document.getElementById('current-month-year');
+        const calendarGrid = document.getElementById('calendar-grid');
         
-        // Устанавливаем заголовок
-        title.textContent = this.getMonthYearString();
-        
-        // Очищаем контейнер дней
-        daysContainer.innerHTML = '';
-        
-        // Получаем первый день месяца и количество дней
-        const firstDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1);
-        const lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0);
-        const daysInMonth = lastDay.getDate();
-        const startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; // Коррекция для понедельника
-        
-        // Создаем дни из предыдущего месяца
-        const prevMonth = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() - 1, 0);
-        const daysInPrevMonth = prevMonth.getDate();
-        
-        for (let i = startDay - 1; i >= 0; i--) {
-            const day = this.createDay(daysInPrevMonth - i, true);
-            daysContainer.appendChild(day);
+        // Очищаем предыдущие дни (оставляем только заголовки дней недели)
+        while (calendarGrid.children.length > 7) {
+            calendarGrid.removeChild(calendarGrid.lastChild);
         }
-        
-        // Создаем дни текущего месяца
-        const today = new Date();
-        
-        for (let i = 1; i <= daysInMonth; i++) {
-            const day = this.createDay(i, false);
-            
-            // Проверяем, сегодня ли это
-            if (this.currentDate.getMonth() === today.getMonth() &&
-                this.currentDate.getFullYear() === today.getFullYear() &&
-                i === today.getDate()) {
-                day.classList.add('today');
-            }
-            
-            // Проверяем, выбран ли день
-            if (this.selectedDate &&
-                this.currentDate.getMonth() === this.selectedDate.getMonth() &&
-                this.currentDate.getFullYear() === this.selectedDate.getFullYear() &&
-                i === this.selectedDate.getDate()) {
-                day.classList.add('selected');
-            }
-            
-                      
-            daysContainer.appendChild(day);
-        }
-        
-        // Создаем дни следующего месяца
-        const totalCells = 42; // 6 строк по 7 дней
-        const remainingCells = totalCells - (startDay + daysInMonth);
-        
-        for (let i = 1; i <= remainingCells; i++) {
-            const day = this.createDay(i, true);
-            daysContainer.appendChild(day);
-        }
-    }
-    
-    createDay(dayNumber, isOtherMonth) {
-        const day = document.createElement('div');
-        day.className = 'day';
-        day.textContent = dayNumber;
-        
-        if (isOtherMonth) {
-            day.classList.add('other-month');
-        } else {
-            day.addEventListener('click', () => {
-                this.selectDay(dayNumber);
-            });
-        }
-        
-        return day;
-    }
-    
-    bindEvents() {
-        this.container.querySelector('.prev-month').addEventListener('click', () => {
-            this.prevMonth();
-        });
-        
-        this.container.querySelector('.next-month').addEventListener('click', () => {
-            this.nextMonth();
-        });
-        
-        this.container.querySelector('.today-btn').addEventListener('click', () => {
-            this.goToToday();
-        });
-    }
-    
-    prevMonth() {
-        this.currentDate.setMonth(this.currentDate.getMonth() - 1);
-        this.render();
-    }
-    
-    nextMonth() {
-        this.currentDate.setMonth(this.currentDate.getMonth() + 1);
-        this.render();
-    }
-    
-    goToToday() {
-        this.currentDate = new Date();
-        this.selectedDate = new Date();
-        this.render();
-    }
-    
-    selectDay(day) {
-        this.selectedDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), day);
-        this.render();
-        
-        // Генерируем событие выбора даты
-        this.triggerDateSelect();
-    }
-    
-    getMonthYearString() {
-        const months = [
+
+        // Устанавливаем заголовок месяца и года
+        const monthNames = [
             'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
             'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
         ];
         
-        return `${months[this.currentDate.getMonth()]} ${this.currentDate.getFullYear()}`;
-    }
-    
-    getDateKey(date) {
-        return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-    }
-    
-    addEvent(date, event) {
-        const dateKey = this.getDateKey(date);
-        
-        if (!this.events.has(dateKey)) {
-            this.events.set(dateKey, []);
-        }
-        
-        this.events.get(dateKey).push(event);
-        this.saveEvents();
-        this.render();
-    }
-    
-    getEvents(date) {
-        const dateKey = this.getDateKey(date);
-        return this.events.get(dateKey) || [];
-    }
-    
-    saveEvents() {
-        const eventsObj = Object.fromEntries(this.events);
-        localStorage.setItem('calendarEvents', JSON.stringify(eventsObj));
-    }
-    
-    loadEvents() {
-        const savedEvents = localStorage.getItem('calendarEvents');
-        if (savedEvents) {
-            this.events = new Map(Object.entries(JSON.parse(savedEvents)));
-        }
-    }
-    
-    triggerDateSelect() {
-        const event = new CustomEvent('dateSelect', {
-            detail: {
-                date: this.selectedDate,
-                events: this.getEvents(this.selectedDate)
-            }
-        });
-        
-        this.container.dispatchEvent(event);
-    }
-}
+        monthYearElement.textContent = 
+            `${monthNames[this.currentDate.getMonth()]} ${this.currentDate.getFullYear()}`;
 
-// Расширенная версия с событиями
-class AdvancedCalendar extends Calendar {
-    constructor(containerSelector) {
-        super(containerSelector);
-        this.createEventForm();
-    }
-    
-    addEventFromForm() {
-        const title = this.eventForm.querySelector('.event-title').value;
-        const description = this.eventForm.querySelector('.event-description').value;
+        // Получаем первый день месяца и количество дней в месяце
+        const firstDay = new Date(
+            this.currentDate.getFullYear(), 
+            this.currentDate.getMonth(), 
+            1
+        );
         
-        if (title) {
-            this.addEvent(this.selectedDate, {
-                title: title,
-                description: description,
-                time: new Date().toLocaleTimeString()
-            });
+        const lastDay = new Date(
+            this.currentDate.getFullYear(), 
+            this.currentDate.getMonth() + 1, 
+            0
+        );
+        
+        const daysInMonth = lastDay.getDate();
+        const startingDayOfWeek = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
+
+        // Добавляем пустые ячейки для дней предыдущего месяца
+        const prevMonthLastDay = new Date(
+            this.currentDate.getFullYear(), 
+            this.currentDate.getMonth(), 
+            0
+        ).getDate();
+        
+        for (let i = 0; i < startingDayOfWeek; i++) {
+            const dayElement = this.createDayElement(
+                prevMonthLastDay - startingDayOfWeek + i + 1,
+                true
+            );
+            calendarGrid.appendChild(dayElement);
+        }
+
+        // Добавляем дни текущего месяца
+        const today = new Date();
+        for (let i = 1; i <= daysInMonth; i++) {
+            const dayElement = this.createDayElement(i, false);
             
-            // Очищаем форму
-            this.eventForm.querySelector('.event-title').value = '';
-            this.eventForm.querySelector('.event-description').value = '';
+            // Проверяем, является ли день сегодняшним
+            if (this.currentDate.getMonth() === today.getMonth() &&
+                this.currentDate.getFullYear() === today.getFullYear() &&
+                i === today.getDate()) {
+                dayElement.classList.add('today');
+            }
+            
+            // Проверяем, выбран ли этот день
+            if (this.selectedDate &&
+                this.currentDate.getMonth() === this.selectedDate.getMonth() &&
+                this.currentDate.getFullYear() === this.selectedDate.getFullYear() &&
+                i === this.selectedDate.getDate()) {
+                dayElement.classList.add('selected');
+            }
+            
+            calendarGrid.appendChild(dayElement);
         }
+
+        // Добавляем дни следующего месяца
+        const totalCells = 42; // 6 строк по 7 дней
+        const remainingCells = totalCells - (startingDayOfWeek + daysInMonth);
+        
+        for (let i = 1; i <= remainingCells; i++) {
+            const dayElement = this.createDayElement(i, true);
+            calendarGrid.appendChild(dayElement);
+        }
+    }
+
+    createDayElement(day, isOtherMonth) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day';
+        dayElement.textContent = day;
+        
+        if (isOtherMonth) {
+            dayElement.classList.add('other-month');
+        } else {
+            dayElement.addEventListener('click', () => {
+                this.selectDate(day);
+            });
+        }
+        
+        return dayElement;
+    }
+
+    selectDate(day) {
+        this.selectedDate = new Date(
+            this.currentDate.getFullYear(),
+            this.currentDate.getMonth(),
+            day
+        );
+        
+        this.updateSelectedDateDisplay();
+        this.renderCalendar(); // Перерисовываем календарь для обновления выделения
+    }
+
+    updateSelectedDateDisplay() {
+        const selectedDateText = document.getElementById('selected-date-text');
+        
+        if (this.selectedDate) {
+            const options = { 
+                month: 'long', 
+                day: 'numeric',
+            };
+            selectedDateText.textContent = this.selectedDate.toLocaleDateString('ru-RU', options);
+        } else {
+            selectedDateText.textContent = 'не выбрано';
+        }
+    }
+
+    addEventListeners() {
+        document.getElementById('prev-month').addEventListener('click', () => {
+            this.navigateMonth(-1);
+        });
+
+        document.getElementById('next-month').addEventListener('click', () => {
+            this.navigateMonth(1);
+        });
+    }
+
+    navigateMonth(direction) {
+        this.currentDate.setMonth(this.currentDate.getMonth() + direction);
+        this.renderCalendar();
     }
 }
 
-// Инициализация календаря
+// Инициализация календаря при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
-    const calendar = new AdvancedCalendar('.calendar-container');
-    
-    // Пример добавления обработчика выбора даты
-    calendar.container.addEventListener('dateSelect', (e) => {
-        console.log('Выбрана дата:', e.detail.date.toLocaleDateString());
-        console.log('События:', e.detail.events);
-    });
-    
-    // Добавляем несколько тестовых событий
-    const testDate = new Date();
-    testDate.setDate(testDate.getDate() + 2);
-    
-    calendar.addEvent(testDate, {
-        title: 'Тестовое событие',
-        description: 'Это тестовое событие для демонстрации',
-        time: '10:00'
-    });
+    new Calendar();
 });

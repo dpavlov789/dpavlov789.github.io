@@ -5,6 +5,8 @@ import './styles/_mixins.scss';
 import './styles/_fonts.scss';
 import './styles/_slider.scss';
 import './styles/_calendar.scss';
+import './styles/_events.scss';
+import './styles/_form.scss';
 import './scripts/main.js';
 import './scripts/slider.js';
 import './scripts/calendar.js';

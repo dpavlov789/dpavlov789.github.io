@@ -1,32 +1,173 @@
-//- doctype html
-//- html(lang= 'ru')
-//-   head
-//-     meta(charset='utf-8')
-//-     title= 'Science'
-//-   body
-//-     p Файл откомпилирован шаблонизатором Pug
-//-     .logo-svg
-//-       img.logo(src=require('./images/logo.svg'), alt='Загрузка SVG изображений с помощью Webpack')
-
-//-     include:markdown-it ../content/article.md
-
 doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Science
-img(src=require('./images/avatar.png') width='100' height='100' alt='')
 header.header
   .container
     .header__wrap
-      a(href='#')
-        img(src='./images/logo.svg' alt='Logo')
+      a.header__logo(href='#')
+        img(src=require('./images/logo.svg') alt='Logo')
       nav
-        ul
-          li Point 1
-          li &Pcy;&ucy;&ncy;&kcy;&tcy; 2
-          li &Pcy;&ucy;&ncy;&kcy;&tcy; 3
-          li &Pcy;&ucy;&ncy;&kcy;&tcy; 4
+        ul.menu__list
+          li
+            a(href='') &Pcy;&ucy;&ncy;&kcy;&tcy; 1
+          li
+            a(href='') &Pcy;&ucy;&ncy;&kcy;&tcy; 2
+          li
+            a(href='') &Pcy;&ucy;&ncy;&kcy;&tcy; 3
+          li
+            a(href='') &Pcy;&ucy;&ncy;&kcy;&tcy; 4
       a.header__phone(href='') +7 999 999 99 99
 main.main
+  section.container
+    .slider
+      .slider__container
+        .slider
+          .slide.active
+            img.slider__img(src=require('./images/slide1.jpg') alt='')
+            div Slide 1
+          .slide
+            img.slider__img(src='./images/slide1.jpg' alt='')
+            div Slide 2
+          .slide
+            img.slider__img(src='./images/slide1.jpg' alt='')
+            div Slide 3
+        button.slider__arrow-btn1.slider__prev
+          svg.slider__arrow1(width='10' height='16' viewbox='0 0 10 16' xmlns='http://www.w3.org/2000/svg')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M0.940023 9.06001C0.659122 8.77876 0.501343 8.39751 0.501343 8.00001C0.501343 7.60251 0.659122 7.22126 0.940023 6.94001L6.59602 1.28201C6.87742 1.00075 7.25902 0.842787 7.65688 0.84288C7.85388 0.842927 8.04894 0.881774 8.23092 0.957206C8.41291 1.03264 8.57826 1.14317 8.71752 1.28251C8.85679 1.42184 8.96725 1.58724 9.04259 1.76926C9.11794 1.95128 9.1567 2.14636 9.15665 2.34336C9.1566 2.54036 9.11775 2.73542 9.04232 2.91741C8.96689 3.09939 8.85636 3.26474 8.71702 3.40401L4.12202 8.00001L8.71802 12.596C8.86135 12.7343 8.9757 12.8998 9.0544 13.0827C9.1331 13.2657 9.17457 13.4625 9.17639 13.6617C9.17822 13.8609 9.14036 14.0584 9.06502 14.2428C8.98969 14.4272 8.87839 14.5947 8.73762 14.7356C8.59685 14.8765 8.42942 14.9879 8.24511 15.0635C8.0608 15.139 7.8633 15.177 7.66413 15.1754C7.46497 15.1737 7.26812 15.1325 7.08507 15.0539C6.90203 14.9754 6.73646 14.8612 6.59802 14.718L0.938023 9.06001H0.940023Z')
+        button.slider__arrow-btn2.slider__next
+          svg.slider__arrow2(width='10' height='16' viewbox='0 0 10 16' xmlns='http://www.w3.org/2000/svg')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M9.05998 6.94001C9.34088 7.22126 9.49866 7.60251 9.49866 8.00001C9.49866 8.39751 9.34088 8.77876 9.05998 9.06001L3.40398 14.718C3.12258 14.9993 2.74098 15.1572 2.34312 15.1571C2.14612 15.1571 1.95106 15.1182 1.76908 15.0428C1.58709 14.9674 1.42174 14.8568 1.28248 14.7175C1.14321 14.5782 1.03275 14.4128 0.957405 14.2308C0.882059 14.0487 0.843303 13.8537 0.843349 13.6567C0.843396 13.4597 0.882245 13.2646 0.957676 13.0826C1.03311 12.9006 1.14364 12.7353 1.28298 12.596L5.87798 8.00001L1.28198 3.40401C1.13865 3.2657 1.0243 3.10024 0.945598 2.91727C0.866899 2.73431 0.82543 2.5375 0.823605 2.33833C0.821781 2.13916 0.859641 1.94162 0.934975 1.75724C1.01031 1.57287 1.12161 1.40534 1.26238 1.26443C1.40315 1.12353 1.57058 1.01207 1.75489 0.93656C1.93919 0.861052 2.13669 0.823006 2.33586 0.824643C2.53503 0.826279 2.73188 0.867564 2.91492 0.946089C3.09797 1.02461 3.26354 1.13881 3.40198 1.28201L9.06198 6.94001L9.05998 6.94001Z')
+        .slider__dots
+  section.container
+    .search__wrap
+      .search__left
+        .search__title &Bcy;&lcy;&ocy;&kcy; &scy; &pcy;&ocy;&icy;&scy;&kcy;&ocy;&mcy;
+        .search__stars
+          svg(width='27' height='27' viewbox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M13.5 0C14.8895 6.79798 20.202 12.1105 27 13.5C20.202 14.8895 14.8895 20.202 13.5 27C12.1105 20.202 6.79798 14.8895 0 13.5C6.79798 12.1105 12.1105 6.79798 13.5 0Z' fill='#2F5DD3')
+          svg(width='27' height='27' viewbox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M13.5 0C14.8895 6.79798 20.202 12.1105 27 13.5C20.202 14.8895 14.8895 20.202 13.5 27C12.1105 20.202 6.79798 14.8895 0 13.5C6.79798 12.1105 12.1105 6.79798 13.5 0Z' fill='#2F5DD3')
+          svg(width='27' height='27' viewbox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M13.5 0C14.8895 6.79798 20.202 12.1105 27 13.5C20.202 14.8895 14.8895 20.202 13.5 27C12.1105 20.202 6.79798 14.8895 0 13.5C6.79798 12.1105 12.1105 6.79798 13.5 0Z' fill='#2F5DD3')
+      .search__right
+        .search__input
+          svg(width='30' height='30' viewbox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M14.2858 24.2857C19.8086 24.2857 24.2858 19.8086 24.2858 14.2857C24.2858 8.76286 19.8086 4.28571 14.2858 4.28571C8.76292 4.28571 4.28577 8.76286 4.28577 14.2857C4.28577 19.8086 8.76292 24.2857 14.2858 24.2857Z' stroke='#242A38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+            path(d='M26.7858 26.7855L21.3483 21.348' stroke='#242A38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+          input(type='search' placeholder='Товары, услуги...')
+        button.btn__blue.search &Pcy;&ocy;&icy;&scy;&kcy;
+  section.container
+    .info__wrap
+      .calendar
+        .calendar-container
+          #selected-date
+            | &Mcy;&iecy;&rcy;&ocy;&pcy;&rcy;&icy;&yacy;&tcy;&icy;&yacy; &ncy;&acy; 
+            span#selected-date-text &ncy;&iecy; &vcy;&ycy;&bcy;&rcy;&acy;&ncy;&ocy;
+          .calendar-header
+            button#prev-month.calendar-nav
+              svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M7.16683 11.7667L10.9918 15.5917C11.148 15.7469 11.3592 15.834 11.5793 15.834C11.7995 15.834 12.0107 15.7469 12.1668 15.5917C12.2449 15.5142 12.3069 15.422 12.3492 15.3205C12.3915 15.2189 12.4133 15.11 12.4133 15C12.4133 14.89 12.3915 14.7811 12.3492 14.6795C12.3069 14.578 12.2449 14.4858 12.1668 14.4083L8.3335 10.5917C8.25539 10.5142 8.1934 10.422 8.15109 10.3205C8.10878 10.2189 8.087 10.11 8.087 9.99999C8.087 9.88998 8.10878 9.78106 8.15109 9.67951C8.1934 9.57796 8.25539 9.48579 8.3335 9.40832L12.1668 5.59165C12.3238 5.43584 12.4123 5.22407 12.4131 5.00294C12.4139 4.7818 12.3268 4.56941 12.171 4.41249C12.0152 4.25557 11.8034 4.16697 11.5823 4.16619C11.3611 4.16541 11.1488 4.25251 10.9918 4.40832L7.16683 8.23332C6.69866 8.70207 6.4357 9.33749 6.4357 9.99999C6.4357 10.6625 6.69866 11.2979 7.16683 11.7667Z' fill='white')
+            #current-month-year
+            button#next-month.calendar-nav
+              svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M12.8332 8.23334L9.00817 4.40834C8.85203 4.25313 8.64082 4.16602 8.42067 4.16602C8.20051 4.16602 7.9893 4.25313 7.83317 4.40834C7.75506 4.48581 7.69307 4.57798 7.65076 4.67953C7.60845 4.78108 7.58667 4.89 7.58667 5.00001C7.58667 5.11002 7.60845 5.21894 7.65076 5.32049C7.69307 5.42204 7.75506 5.51421 7.83317 5.59168L11.6665 9.40834C11.7446 9.48581 11.8066 9.57798 11.8489 9.67953C11.8912 9.78108 11.913 9.89 11.913 10C11.913 10.11 11.8912 10.2189 11.8489 10.3205C11.8066 10.422 11.7446 10.5142 11.6665 10.5917L7.83317 14.4083C7.67625 14.5642 7.58765 14.7759 7.58687 14.9971C7.58609 15.2182 7.67319 15.4306 7.829 15.5875C7.98482 15.7444 8.19659 15.833 8.41772 15.8338C8.63886 15.8346 8.85125 15.7475 9.00817 15.5917L12.8332 11.7667C13.3013 11.2979 13.5643 10.6625 13.5643 10C13.5643 9.33751 13.3013 8.7021 12.8332 8.23334Z' fill='white')
+          #calendar-grid.calendar-grid
+            .calendar-day-header &Pcy;&ncy;
+            .calendar-day-header &Vcy;&tcy;
+            .calendar-day-header &Scy;&rcy;
+            .calendar-day-header &CHcy;&tcy;
+            .calendar-day-header &Pcy;&tcy;
+            .calendar-day-header &Scy;&bcy;
+            .calendar-day-header &Vcy;&scy;
+      .events
+        .events__item
+          .events__tags
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+          .events__item-text
+            | &Mcy;&iecy;&zhcy;&dcy;&ucy;&ncy;&acy;&rcy;&ocy;&dcy;&ncy;&acy;&yacy; &ncy;&acy;&ucy;&chcy;&ncy;&ocy;-&pcy;&rcy;&acy;&kcy;&tcy;&icy;&chcy;&iecy;&scy;&kcy;&acy;&yacy; &kcy;&ocy;&ncy;&fcy;&iecy;&rcy;&iecy;&ncy;&tscy;&icy;&yacy;: &ldquo;&Pcy;&iecy;&rcy;&iecy;&khcy;&ocy;&dcy; &ocy;&tcy; &ocy;&bcy;&rcy;&acy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&jcy; &scy;&rcy;&iecy;&dcy;&ycy; &kcy; &ocy;&bcy;&rcy;&acy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&jcy; &ecy;&kcy;&ocy;&scy;&icy;&scy;&tcy;&iecy;&mcy;&iecy; &vcy; &icy;&ncy;&tcy;&iecy;&rcy;&iecy;&scy;&acy;&khcy; &ucy;&scy;&tcy;&ocy;&jcy;&chcy;&icy;&vcy;&ocy;&gcy;&ocy; &rcy;&acy;&zcy;&vcy;&icy;&tcy;&icy;&yacy;&rdquo;&rdquo;
+          .events__btns
+            a.btn__light(href='') &Ncy;&acy;&pcy;&icy;&scy;&acy;&tcy;&softcy;
+            a.btn__blue.events__btn(href='')
+              | &Pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+              svg(width='24' height='24' viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M14.4299 5.92999L20.4999 12L14.4299 18.07' stroke='white' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round')
+                path(d='M3.5 12H20.33' stroke='white' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round')
+        .events__item
+          .events__tags
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+          .events__item-text
+            | &Mcy;&iecy;&zhcy;&dcy;&ucy;&ncy;&acy;&rcy;&ocy;&dcy;&ncy;&acy;&yacy; &ncy;&acy;&ucy;&chcy;&ncy;&ocy;-&pcy;&rcy;&acy;&kcy;&tcy;&icy;&chcy;&iecy;&scy;&kcy;&acy;&yacy; &kcy;&ocy;&ncy;&fcy;&iecy;&rcy;&iecy;&ncy;&tscy;&icy;&yacy;: &ldquo;&Pcy;&iecy;&rcy;&iecy;&khcy;&ocy;&dcy; &ocy;&tcy; &ocy;&bcy;&rcy;&acy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&jcy; &scy;&rcy;&iecy;&dcy;&ycy; &kcy; &ocy;&bcy;&rcy;&acy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&jcy; &ecy;&kcy;&ocy;&scy;&icy;&scy;&tcy;&iecy;&mcy;&iecy; &vcy; &icy;&ncy;&tcy;&iecy;&rcy;&iecy;&scy;&acy;&khcy; &ucy;&scy;&tcy;&ocy;&jcy;&chcy;&icy;&vcy;&ocy;&gcy;&ocy; &rcy;&acy;&zcy;&vcy;&icy;&tcy;&icy;&yacy;&rdquo;&rdquo;
+          .events__btns
+            a.btn__light(href='') &Ncy;&acy;&pcy;&icy;&scy;&acy;&tcy;&softcy;
+            a.btn__blue.events__btn(href='')
+              | &Pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+              svg(width='24' height='24' viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M14.4299 5.92999L20.4999 12L14.4299 18.07' stroke='white' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round')
+                path(d='M3.5 12H20.33' stroke='white' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round')
+        .events__item
+          .events__tags
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+          .events__item-text
+            | &Mcy;&iecy;&zhcy;&dcy;&ucy;&ncy;&acy;&rcy;&ocy;&dcy;&ncy;&acy;&yacy; &ncy;&acy;&ucy;&chcy;&ncy;&ocy;-&pcy;&rcy;&acy;&kcy;&tcy;&icy;&chcy;&iecy;&scy;&kcy;&acy;&yacy; &kcy;&ocy;&ncy;&fcy;&iecy;&rcy;&iecy;&ncy;&tscy;&icy;&yacy;: &ldquo;&Pcy;&iecy;&rcy;&iecy;&khcy;&ocy;&dcy; &ocy;&tcy; &ocy;&bcy;&rcy;&acy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&jcy; &scy;&rcy;&iecy;&dcy;&ycy; &kcy; &ocy;&bcy;&rcy;&acy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&jcy; &ecy;&kcy;&ocy;&scy;&icy;&scy;&tcy;&iecy;&mcy;&iecy; &vcy; &icy;&ncy;&tcy;&iecy;&rcy;&iecy;&scy;&acy;&khcy; &ucy;&scy;&tcy;&ocy;&jcy;&chcy;&icy;&vcy;&ocy;&gcy;&ocy; &rcy;&acy;&zcy;&vcy;&icy;&tcy;&icy;&yacy;&rdquo;&rdquo;
+          .events__btns
+            a.btn__light(href='') &Ncy;&acy;&pcy;&icy;&scy;&acy;&tcy;&softcy;
+            a.btn__blue.events__btn(href='')
+              | &Pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+              svg(width='24' height='24' viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M14.4299 5.92999L20.4999 12L14.4299 18.07' stroke='white' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round')
+                path(d='M3.5 12H20.33' stroke='white' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round')
+        .events__item
+          .events__tags
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+            .events__tag &Ocy;&chcy;&iecy;&ncy;&softcy; &dcy;&lcy;&icy;&ncy;&ncy;&ycy;&jcy; &tcy;&ecy;&gcy;
+          .events__item-text
+            | &Mcy;&iecy;&zhcy;&dcy;&ucy;&ncy;&acy;&rcy;&ocy;&dcy;&ncy;&acy;&yacy; &ncy;&acy;&ucy;&chcy;&ncy;&ocy;-&pcy;&rcy;&acy;&kcy;&tcy;&icy;&chcy;&iecy;&scy;&kcy;&acy;&yacy; &kcy;&ocy;&ncy;&fcy;&iecy;&rcy;&iecy;&ncy;&tscy;&icy;&yacy;: &ldquo;&Pcy;&iecy;&rcy;&iecy;&khcy;&ocy;&dcy; &ocy;&tcy; &ocy;&bcy;&rcy;&acy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&jcy; &scy;&rcy;&iecy;&dcy;&ycy; &kcy; &ocy;&bcy;&rcy;&acy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&jcy; &ecy;&kcy;&ocy;&scy;&icy;&scy;&tcy;&iecy;&mcy;&iecy; &vcy; &icy;&ncy;&tcy;&iecy;&rcy;&iecy;&scy;&acy;&khcy; &ucy;&scy;&tcy;&ocy;&jcy;&chcy;&icy;&vcy;&ocy;&gcy;&ocy; &rcy;&acy;&zcy;&vcy;&icy;&tcy;&icy;&yacy;&rdquo;&rdquo;
+          .events__btns
+            a.btn__light(href='') &Ncy;&acy;&pcy;&icy;&scy;&acy;&tcy;&softcy;
+            a.btn__blue.events__btn(href='')
+              | &Pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+              svg(width='24' height='24' viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M14.4299 5.92999L20.4999 12L14.4299 18.07' stroke='white' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round')
+                path(d='M3.5 12H20.33' stroke='white' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round')
 footer.footer
