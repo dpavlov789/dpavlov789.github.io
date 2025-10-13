@@ -273,3 +273,20 @@ section{
     border-top: var(--border);
     padding: 100px;
 }
+
+@media (max-width: 480px) {
+
+    section{
+        margin: 0 auto 50px;
+    }
+
+    .area2__items{
+        flex-direction: column;
+    }
+
+    .area2__item{
+        width: 100%;
+        padding: 16px;
+        height: auto;
+    }
+}
