@@ -89,6 +89,7 @@ section{
     background-position: center;
     text-align: center;
     padding: 140px 0;
+    margin-bottom: 10px;
 }
 
 .area1__title{
@@ -133,6 +134,35 @@ section{
     fill: var(--background-color);
 }
 
+/*---Logos Slider start---*/
+@keyframes scroll {
+0% {
+    transform: translateX(0);
+}
+100% {
+    transform: translateX(calc(-250px * 10));
+}
+}
+.slider__fn {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider__fn .slide-track__fn {
+    animation: scroll 35s linear infinite;
+    display: flex;
+    width: calc(250px * 20);
+}
+
+.slider__fn .slide__fn {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    width: 250px;
+}
+/*---Logos Slider end---*/
+
 .area2__items{
     display: flex;
     align-items: center;
@@ -142,6 +172,7 @@ section{
 
 .area2__item{
     width: 33%;
+    height: 250px;
     padding: 48px;
     background-color: #181716;
     border: 1px solid #35312c;
