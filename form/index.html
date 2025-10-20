@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 1</title>
+    <link rel="stylesheet" href="dist/css/index.css">
+</head>
+<body>
+    <header class="header">
+        <section class="header__text-wrap">
+            <div class="header__text-cont">
+                <h1>Заголовок h1</h1>
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+            <div class="header__img"></div>
+        </section>
+    </header>
+    <main class="main container">
+        <section>
+            <h2>Заголовок h2</h2>
+            <form action="" class="form__wrap">
+                <div class="range_container">
+                    <label for="">Выберите диапазон</label>
+                    <div class="form_control">
+                        <div class="form_control_container">
+                            <input class="form_control_container__time__input" type="number" id="fromInput" value="0" min="0" max="100"/>
+                        </div>
+                        <div class="form_control_container">
+                            <input class="form_control_container__time__input" type="number" id="toInput" value="100" min="0" max="100"/>
+                        </div>
+                    </div>
+                    <div class="sliders_control">
+                        <input id="fromSlider" type="range" value="0" min="0" max="100"/>
+                        <input id="toSlider" type="range" value="100" min="0" max="100"/>
+                    </div>
+                </div>
+                <div class="choise__wrap">
+                    <div class="select__wrap">
+                        <div class="form__group">
+                            <label for="option">Выберите Select</label>
+                            <div class="custom__select">
+                                <div class="select__selected">Option</div>
+                                <div class="select__items">
+                                    <ul>
+                                        <li data-value="vite">Vite</li>
+                                        <li data-value="webpack">Webpack</li>
+                                        <li data-value="gulp">Gulp</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="radio__wrap">
+                        <label>Выберите radio</label>
+                        <div class="radio__container">
+                            <div class="radio__item">
+                                <input type="radio" id="option1" name="choose__radio">
+                                <label class="label__radio" for="option1">JavaScript</label>
+                            </div>
+
+                            <div class="radio__item">
+                                <input type="radio" id="option2" name="choose__radio">
+                                <label class="label__radio" for="option2">PHP</label>
+                            </div>
+
+                            <div class="radio__item">
+                                <input type="radio" id="option3" name="choose__radio">
+                                <label class="label__radio" for="option3">C#</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="data__wrap">
+                    <div class="data__item">
+                        <label for="name">Введите ФИО</label>
+                        <input type="text" placeholder="Placeholder">
+                    </div>
+                    <div class="data__item">
+                        <label for="age">Введите возраст в цифрах</label>
+                        <input type="text" placeholder="Placeholder">
+                    </div>
+                </div>
+                <div class="chbox__wrap">
+                    <label>
+                        <input type="checkbox" class="custom-checkbox" checked>
+                        <span class="custom-checkbox-label">
+                            <span class="custom-checkbox-fake"></span>
+                            Обязательный чекбокс
+                        </span>
+                    </label>
+                    <label>
+                        <input type="checkbox" class="custom-checkbox">
+                        <span class="custom-checkbox-label">
+                            <span class="custom-checkbox-fake"></span>
+                            Необязательный чекбокс
+                        </span>
+                    </label>
+                </div>
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+        </section>
+        <section class="h3__content">
+            <h3>Заголовок h3</h3>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        </section>
+    </main>
+    <footer class="footer container">
+        © Павлов Дмитрий Евгеньевич 1984&nbsp;-&nbsp;<span id="current-year"></span>
+    </footer>
+</body>
+<script src="js/index.js"></script>
+</html>
