@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 html {
   -webkit-box-sizing: border-box;
@@ -552,14 +551,12 @@ input[type=radio]:checked + label::after {
 }
 
 /*---Checkbox custmize start---*/
-/* Скрываем стандартный чекбокс */
 .custom-checkbox {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
-/* Стилизуем метку, чтобы сделать ее кликабельной */
 .custom-checkbox-label {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -570,22 +567,20 @@ input[type=radio]:checked + label::after {
   cursor: pointer;
 }
 
-/* Стилизуем "фейковый" чекбокс */
 .custom-checkbox-fake {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-color: #fff; /* Фон в неактивном состоянии */
+  background-color: #fff;
   margin-right: 10px;
   border: 1px solid #000;
   -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
 }
 
-/* Изменяем фон, когда чекбокс нажат */
 .custom-checkbox:checked + .custom-checkbox-label .custom-checkbox-fake {
-  background-color: #025B58; /* Новый фон в активном состоянии */
-  background-image: url(../img/cross.svg);
+  background-color: #025B58;
+  background-image: url(img/cross.svg);
   background-repeat: no-repeat;
   background-position: center center;
 }
