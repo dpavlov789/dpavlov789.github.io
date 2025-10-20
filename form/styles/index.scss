@@ -29,9 +29,9 @@
 }
 
 .header__img{
-    max-width: 603px;
-    max-width: 221px;
-    background: url(img/les.png);
+    width: 603px;
+    height: 221px;
+    background-image: url(img/les.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -39,6 +39,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 100;
 }
 
 .form__wrap{

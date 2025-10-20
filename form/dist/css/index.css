@@ -169,7 +169,7 @@ button {
 .header__img {
   width: 603px;
   height: 221px;
-  background: url(../img/les.png);
+  background-image: url(img/les.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -177,6 +177,7 @@ button {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 100;
 }
 
 .form__wrap {
@@ -584,7 +585,7 @@ input[type=radio]:checked + label::after {
 /* Изменяем фон, когда чекбокс нажат */
 .custom-checkbox:checked + .custom-checkbox-label .custom-checkbox-fake {
   background-color: #025B58; /* Новый фон в активном состоянии */
-  background-image: url(/img/cross.svg);
+  background-image: url(../img/cross.svg);
   background-repeat: no-repeat;
   background-position: center center;
 }
