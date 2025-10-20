@@ -29,9 +29,10 @@
 }
 
 .header__img{
-    width: 603px;
-    height: 221px;
-    background: url(../img/les.png);
+    width: 100%;
+    max-width: 603px;
+    max-width: 221px;
+    background: url(img/les.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
